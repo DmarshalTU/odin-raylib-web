@@ -4,7 +4,7 @@
 # but without any OS support (freestanding). It then uses emscripten to compile
 # a small C program that is the entry point of the web build. That C program
 # calls the Odin code.
-# 
+#
 # Being built in freestanding mode, the Odin code has no allocator set up by
 # default. I work around this by setting up an allocator that uses the C
 # standard library that emscripten exposes. See the stuff in `source/main_web`
@@ -23,7 +23,7 @@ export EMSDK_QUIET=1
 # shellcheck disable=SC1091
 [[ -f "$EMSCRIPTEN_SDK_DIR/emsdk_env.sh" ]] && . "$EMSCRIPTEN_SDK_DIR/emsdk_env.sh"
 
-# Note RAYLIB_WASM_LIB=env.o -- This env.o thing is the object file that 
+# Note RAYLIB_WASM_LIB=env.o -- This env.o thing is the object file that
 # contains things linked into the WASM binary. You can see how RAYLIB_WASM_LIB
 # is used inside <odin>/vendor/raylib/raylib.odin.
 #
